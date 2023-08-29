@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
   resources :users
   
+  resources :support_requests, only: %i[ index update ]
+  resources :users
   resources :products do
     get :who_bought, on: :member 
   end
