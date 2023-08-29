@@ -93,4 +93,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+config.logger = Logger.new(config.paths['log'].first, 'daily') 
+#або require 'active_support/core_ext/numeric/bytes'
+#config.logger = Logger.new(config.paths['log'].first, 10, 10.megabytes)
 end
